@@ -10,8 +10,6 @@ public:
         }
         int m=num.size();
         sort(num.begin(),num.end());
-        int ans=num[m-1]*num[m-2];
-
-        return ans;
+        return num[m-1]*num[m-2];
     }
 };
