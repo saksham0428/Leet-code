@@ -1,12 +1,13 @@
 class Solution {
 public:
     int missingMultiple(vector<int>& nums, int k) {
-        unordered_set<int> set(nums.begin(),nums.end());
-
-        int ans=k;
-        while(set.count(ans)){
-            ans+=k;
+        int i = 0;
+        for(i=0; i<nums.size(); i++){
+            int key = k*(i+1);
+            if(! ranges::contains(nums, key)){
+                return key;
+            }
         }
-        return ans;
+        return k*(i+1);
     }
 };
