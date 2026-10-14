@@ -2,6 +2,7 @@ class Solution {
 public:
     bool isHappy(int n) {
         set<int> st;
+
         while(true){
             int sum=0;
             while(n!=0){
@@ -10,11 +11,11 @@ public:
             }
             if(sum==1) return true;
             n=sum;
-            if(st.contains(n)){
-                return false;
-                }
+            if(st.contains(n)) return false;
             st.insert(n);
+
         }
         return true;
+        
     }
 };
